@@ -24,3 +24,7 @@ main() {
       Characters(hi).replaceAll(Characters('🇩🇰'), Characters('🇺🇸'));
   print('Change flag: "$newHi"');
 }
+
+String skipLastChar(String text) {
+  return text.characters.skipLast(1).toString();
+}
