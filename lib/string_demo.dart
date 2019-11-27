@@ -16,6 +16,16 @@ int checkMaxLength(String input, int limit) {
   return limit - length;
 }
 
+// Display additional text overflow as an ellipsis
+// when the number of characters exceeds the limit.
+String textOverflowEllipsis(String text, int limit) {
+  if (text.length > limit) {
+    return text.substring(0, limit - 3 - 1) + '...';
+  } else {
+    return text;
+  }
+}
+
 // Capitalize the first letter of a string
 // Note: this function is not grapheme-aware
 // String capitalizeFirstLetter(String text) {
