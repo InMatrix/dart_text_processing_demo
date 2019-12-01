@@ -1,28 +1,32 @@
 import 'package:test/test.dart';
-import 'package:dart_text_processing_demo/string_demo.dart';
+import 'package:dart_text_processing_demo/text_demo.dart';
 
 void main() {
+  TextDemo td;
+  // td = TextDemo();
+  td = GraphemeSafeTextDemo();
+
   test("skipLastChar(text) removes the last character from the string", () {
     var string = 'Hi 🇩🇰';
-    expect(skipLastChar(string), equals('Hi '));
+    expect(td.skipLastChar(string), equals('Hi '));
   });
 
   test("validateEmail(email) checks if the email is likely to be valid", () {
     var email = 'café@';
-    expect(validateEmail(email), equals(false));
+    expect(td.validateEmail(email), equals(false));
     email = 'café@google.com';
-    expect(validateEmail(email), equals(true));
+    expect(td.validateEmail(email), equals(true));
   });
 
   test('''checkMaxLength(String input, int limit) 
 returns how many characters left in the space''', () {
-    var input = '''Laughter is the sensation of feeling good all over 
-    and showing it principally in one place.''';
+    var input =
+        '''Laughter is the sensation of feeling good all over and showing it principally in one place.''';
     var limit = 140;
-    expect(checkMaxLength(input, limit), equals(49));
-    input = '''Laughter 😀 is the sensation of feeling good all over 
-    and showing it principally in one place.''';
-    expect(checkMaxLength(input, limit), equals(47));
+    expect(td.checkMaxLength(input, limit), equals(49));
+    input =
+        '''Laughter 😀 is the sensation of feeling good all over and showing it principally in one place.''';
+    expect(td.checkMaxLength(input, limit), equals(47));
   });
 
   test(
@@ -30,7 +34,7 @@ returns how many characters left in the space''', () {
       () {
     var input = "rhinoceros";
     var limit = 7;
-    expect(textOverflowEllipsis(input, limit), equals("rhin..."));
+    expect(td.textOverflowEllipsis(input, limit), equals("rhin..."));
   });
 
   // test("capitalizeFirstLetter(text) capitalizes the first letter of a string", () {
