@@ -25,7 +25,7 @@ class TextDemo {
     return limit - length;
   }
 
-  // Display additional text overflow as an ellipsis
+  // Display text overflow as an ellipsis
   // when the number of characters exceeds the limit.
   String textOverflowEllipsis(String text, int limit) {
     if (text.length > limit) {
