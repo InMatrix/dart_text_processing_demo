@@ -52,4 +52,9 @@ class GraphemeSafeTextDemo extends TextDemo {
     var length = input.characters.length;
     return limit - length;
   }
+
+  @override
+   String textOverflowEllipsis(String text, int limit) {
+     return text.characters.take(limit - 3).toString() + '...';
+   }
 }

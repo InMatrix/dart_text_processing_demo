@@ -3,8 +3,8 @@ import 'package:dart_text_processing_demo/text_demo.dart';
 
 void main() {
   TextDemo td;
-  // td = TextDemo();
-  td = GraphemeSafeTextDemo();
+  td = TextDemo();
+  // td = GraphemeSafeTextDemo();
 
   test("skipLastChar(text) removes the last character from the string", () {
     var string = 'Hi 🇩🇰';
@@ -32,9 +32,9 @@ returns how many characters left in the space''', () {
   test(
       "textOverflowEllipsis(String text, int limit) displays an ellipsis for overflown text",
       () {
-    var input = "rhinoceros";
+    var input = "🦏rhinoceros";
     var limit = 7;
-    expect(td.textOverflowEllipsis(input, limit), equals("rhin..."));
+    expect(td.textOverflowEllipsis(input, limit), equals("🦏rhi..."));
   });
 
   // test("capitalizeFirstLetter(text) capitalizes the first letter of a string", () {
