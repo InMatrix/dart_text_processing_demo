@@ -54,7 +54,15 @@ class GraphemeSafeTextDemo extends TextDemo {
   }
 
   @override
-   String textOverflowEllipsis(String text, int limit) {
-     return text.characters.take(limit - 3).toString() + '...';
-   }
+  String textOverflowEllipsis(String text, int limit) {
+    return text.characters.take(limit - 3).toString() + '...';
+  }
+
+  @override
+  String capitalizeFirstLetter(String text) {
+    var chars = text.characters;
+    var firstChar = chars.first.toUpperCase();
+    var restChars = chars.skip(1);
+    return firstChar.toString() + restChars.toString();
+  }
 }

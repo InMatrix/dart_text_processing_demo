@@ -4,7 +4,8 @@ import 'package:dart_text_processing_demo/text_demo.dart';
 void main() {
   TextDemo td;
   td = TextDemo();
-  // td = GraphemeSafeTextDemo();
+  // Uncomment the line below to use the grapheme-safe version of the text processing demo
+  td = GraphemeSafeTextDemo();
 
   test("skipLastChar(text) removes the last character from the string", () {
     var string = 'Hi 🇩🇰';
@@ -37,10 +38,11 @@ returns how many characters left in the space''', () {
     expect(td.textOverflowEllipsis(input, limit), equals("🦏rhi..."));
   });
 
-  // test("capitalizeFirstLetter(text) capitalizes the first letter of a string", () {
-  //   var string = "hello";
-  //   expect(capitalizeFirstLetter(string), equals('Hello'));
-  //   string = "🇩🇰g̈-connected spaces";
-  //   expect(capitalizeFirstLetter(string), equals('🇩🇰g̈-connected spaces'));
-  // });
+  test("capitalizeFirstLetter(text) capitalizes the first letter of a string",
+      () {
+    var text = "hello";
+    expect(td.capitalizeFirstLetter(text), equals('Hello'));
+    text = "𐑅𐐻𐐪𐑉";
+    expect(td.capitalizeFirstLetter(text), equals('𐐝𐐻𐐪𐑉'));
+  });
 }
