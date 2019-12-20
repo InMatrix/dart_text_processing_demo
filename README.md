@@ -10,6 +10,7 @@ This repo is set up to demonstrate when it's necessary to use the [Characters](h
 | checkMaxLength        | Count the number of characters in the string       | ⚠️           | ✅                |
 | textOverflowEllipsis  | Display text overflow as an ellipsis               | ⚠️           | ✅                |
 | capitalizeFirstLetter | Capitalize the first letter of a string            | ⚠️           | ✅               |
+| createInitials | Create initials from a full name | ⚠️           | ✅               |
 
 ⚠️  Grapheme-safe implementation. ✅ Grapheme-safe implementation
 ## TODOs

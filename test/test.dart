@@ -5,7 +5,7 @@ void main() {
   TextDemo td;
   td = TextDemo();
   // Uncomment the line below to use the grapheme-safe version of the text processing demo
-  td = GraphemeSafeTextDemo();
+  // td = GraphemeSafeTextDemo();
 
   test("skipLastChar(text) removes the last character from the string", () {
     var string = 'Hi 🇩🇰';
@@ -19,8 +19,7 @@ void main() {
     expect(td.validateEmail(email), equals(true));
   });
 
-  test('''checkMaxLength(String input, int limit) 
-returns how many characters left in the space''', () {
+  test('''checkMaxLength(String input, int limit) returns how many characters left in the space''', () {
     var input =
         '''Laughter is the sensation of feeling good all over and showing it principally in one place.''';
     var limit = 140;
@@ -44,5 +43,11 @@ returns how many characters left in the space''', () {
     expect(td.capitalizeFirstLetter(text), equals('Hello'));
     text = "𐑅𐐻𐐪𐑉";
     expect(td.capitalizeFirstLetter(text), equals('𐐝𐐻𐐪𐑉'));
+  });
+
+  test("createInitials(fullName) creates initials from a full name",
+      () {
+    var fullName = "étienne bézout";
+    expect(td.createInitials(fullName), equals('ÉB'));
   });
 }

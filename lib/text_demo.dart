@@ -65,4 +65,14 @@ class GraphemeSafeTextDemo extends TextDemo {
     var restChars = chars.skip(1);
     return firstChar.toString() + restChars.toString();
   }
+
+  @override
+  String createInitials(String fullName) {
+    var initials = '';
+    var names = fullName.split(' ');
+    for (var name in names) {
+      initials += name.characters.first.toUpperCase();
+    }
+    return initials;
+  }
 }
