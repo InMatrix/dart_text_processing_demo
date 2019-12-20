@@ -39,6 +39,16 @@ class TextDemo {
   String capitalizeFirstLetter(String text) {
     return text[0].toUpperCase() + text.substring(1);
   }
+
+  // Create initials from a full name
+  String createInitials(String fullName) {
+    var initials = '';
+    var names = fullName.split(' ');
+    for (var name in names) {
+      initials += name[0].toUpperCase();
+    }
+    return initials;
+  }
 }
 
 class GraphemeSafeTextDemo extends TextDemo {
