@@ -19,7 +19,9 @@ void main() {
     expect(td.validateEmail(email), equals(true));
   });
 
-  test('''checkMaxLength(String input, int limit) returns how many characters left in the space''', () {
+  test(
+      '''checkMaxLength(String input, int limit) returns how many characters left in the space''',
+      () {
     var input =
         '''Laughter is the sensation of feeling good all over and showing it principally in one place.''';
     var limit = 140;
@@ -45,9 +47,11 @@ void main() {
     expect(td.capitalizeFirstLetter(text), equals('𐐝𐐻𐐪𐑉'));
   });
 
-  test("createInitials(fullName) creates initials from a full name",
+  test(
+      "createInitials(firstName, lastname) creates initials from a first name and a last name",
       () {
-    var fullName = "étienne bézout";
-    expect(td.createInitials(fullName), equals('ÉB'));
+    var firstName = "étienne";
+    var lastname = "bézout";
+    expect(td.createInitials(firstName, lastname), equals('ÉB'));
   });
 }

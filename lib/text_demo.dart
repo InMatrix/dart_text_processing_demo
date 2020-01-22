@@ -40,14 +40,9 @@ class TextDemo {
     return text[0].toUpperCase() + text.substring(1);
   }
 
-  // Create initials from a full name
-  String createInitials(String fullName) {
-    var initials = '';
-    var names = fullName.split(' ');
-    for (var name in names) {
-      initials += name[0].toUpperCase();
-    }
-    return initials;
+  // Create initials from a first name and a last name
+  String createInitials(String firstName, String lastName) {
+    return firstName[0].toUpperCase() + lastName[0].toUpperCase();
   }
 }
 
@@ -77,12 +72,9 @@ class GraphemeSafeTextDemo extends TextDemo {
   }
 
   @override
-  String createInitials(String fullName) {
-    var initials = '';
-    var names = fullName.split(' ');
-    for (var name in names) {
-      initials += name.characters.first.toUpperCase();
-    }
+  String createInitials(String firstName, String lastName) {
+    var initials = firstName.characters.first.toUpperCase() +
+        lastName.characters.first.toUpperCase();
     return initials;
   }
 }
