@@ -54,4 +54,11 @@ void main() {
     var lastname = "bézout";
     expect(td.createInitials(firstName, lastname), equals('ÉB'));
   });
+
+  test("splitEmojiSeparatedWords(String text, String separator)", () {
+    var text = "abc👨‍👩‍👧‍👦👧abc👧abc👧abc";
+    var separator = "👧";
+    List<String> expected = ["abc👨‍👩‍👧‍👦", "abc", "abc", "abc"];
+    expect(td.splitEmojiSeparatedWords(text, separator), equals(expected));
+  });
 }

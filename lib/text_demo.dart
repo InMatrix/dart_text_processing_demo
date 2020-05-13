@@ -44,6 +44,10 @@ class TextDemo {
   String createInitials(String firstName, String lastName) {
     return firstName[0].toUpperCase() + lastName[0].toUpperCase();
   }
+
+  List splitEmojiSeparatedWords(String text, String separator) {
+    return text.split(separator);
+  }
 }
 
 class GraphemeSafeTextDemo extends TextDemo {
